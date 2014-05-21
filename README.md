@@ -18,7 +18,7 @@ Note: You may need to change the database configuration in the db.js file, if mo
 
 First of all you need to create a client in the clients collection, for example, with the mongo shell. The client should have a clientId and a clientSecret.
 For example:
-{"clientId" : "test", "clientSecret" : "secret", "trustedClient" : true}
+{"clientId" : "test", "clientSecret" : "secret"}
 
 ###### 1 - Get an access token
 
