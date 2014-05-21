@@ -23,7 +23,7 @@ For example:
 ###### 1 - Get an access token
 
 ```
-curl -v -H "Content-Type: application/json" -X POST <IP>:<PORT>/oauth/token -u <clientId>:<clientSecret> -d '{"grant_type": "token"}'
+curl -v -H "Content-Type: application/json" -X POST <IP>:<PORT>/oauth/token -u <clientId>:<clientSecret> -d '{"grant_type": "client_credentials"}'
 ```
 
 ###### 2 - Access a restricted resource using the access token
