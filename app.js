@@ -7,7 +7,6 @@ var express = require('express')
     , expressValidator = require('express-validator')
     , auth = require("./auth")
     , oauth = require("./oauth")
-    , registration = require("./registration")
 
 // Express configuration
 var app = express()
@@ -16,7 +15,6 @@ app.use(expressValidator())
 
 app.use(passport.initialize())
 
-app.post('/users', registration.registerUser)
 app.post('/oauth/token', oauth.token)
 app.get('/restricted', passport.authenticate('accessToken', { session: false }), function (req, res) {
     res.send("Yay, you successfully accessed the restricted resource!")
