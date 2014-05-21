@@ -12,11 +12,12 @@ var server = oauth2orize.createServer();
 server.exchange(oauth2orize.exchange.clientCredentials(function(client, scope, done) {
     var token = utils.uid(256)
     var tokenHash = crypto.createHash('sha1').update(token).digest('hex')
-    var expirationDate = new Date(new Date().getTime() + (3600 * 1000))
+    var expiresIn = 1800
+    var expirationDate = new Date(new Date().getTime() + (expiresIn * 1000))
 
     db.collection('accessTokens').save({token: tokenHash, expirationDate: expirationDate, clientId: client.clienId, scope: scope}, function(err) {
         if (err) return done(err)
-        return done(null, token, {expires_in: expirationDate})
+        return done(null, token, {expires_in: expiresIn})
     })
 }))
 
