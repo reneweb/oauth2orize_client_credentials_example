@@ -31,10 +31,3 @@ curl -v -H "Content-Type: application/json" -X POST <IP>:<PORT>/oauth/token -u <
 ```
 curl -X GET <IP>:<PORT>/restricted -v -H "Authorization: Bearer <accessToken>"
 ```
-
-###### 3 - Get a new access token using the refresh token
-
-```
-curl -X POST <IP>:<PORT>/oauth/token -u <clientId>:<clientSecret> -v -H "Content-Type: application/json" -d '{"grant_type": "refresh_token", "refresh_token": "<refreshToken>"}'
-```
-
